@@ -1,0 +1,16 @@
+{
+  "name": "gco-modelosbasadoscontenido",
+  "version": "1.0.0",
+  "description": "",
+  "main": "replaceWords.js",
+  "scripts": {
+    "start": "tsc-watch --onSuccess \"node dist/replaceWords.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "tsc-watch": "^6.0.4"
+  }
+}
