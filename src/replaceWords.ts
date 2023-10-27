@@ -2,23 +2,23 @@ import * as fs from 'fs';
 import { readDocument } from "./readDocument.js"
 import { removeStopWords } from "./removeStopWords.js"
 
-export function replaceWords(filePath: string, wordsToReplace: string[][]): string[] {
-  try {
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const wordPairs = JSON.parse(fileContent);
-
-    const replacedText = wordsToReplace.map(wordArray => 
-      wordArray.map(word => wordPairs[word] || word).join(' ')
-    );
-
-    return replacedText;
-  } catch (error) {
-    console.error('Error al leer el archivo o reemplazar palabras:', error);
-    return [];
-  }
+export function replaceWords(filePath: string, wordsToReplace: string[][]): string[][] {
+    try {
+      const fileContent = fs.readFileSync(filePath, 'utf8');
+      const wordPairs = JSON.parse(fileContent);
+  
+      const replacedText = wordsToReplace.map(wordArray =>
+        wordArray.map(word => wordPairs[word] || word)
+      );
+  
+      return replacedText;
+    } catch (error) {
+      console.error('Error al leer el archivo o reemplazar palabras:', error);
+      return [];
+    }
 }
 
-/*
+
 const filePath = './examples/documents/documents-01.txt';
 const documents = readDocument(filePath);
 
@@ -34,4 +34,3 @@ filteredResult.forEach((row, index) => {
 const corpusFilePath = './examples/corpus/corpus-en.txt';
 const corpusResult = replaceWords(corpusFilePath, filteredResult);
 console.log('Texto reemplazado:', corpusResult);
-*/
