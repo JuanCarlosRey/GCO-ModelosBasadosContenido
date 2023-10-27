@@ -1,6 +1,5 @@
 import * as fs from 'fs';
 import { readDocument } from "./readDocument.js"
-import { readStopWordsFile } from "./readStopWords.js"
 import { removeStopWords } from "./removeStopWords.js"
 
 export function replaceWords(filePath: string, wordsToReplace: string[][]): string[] {
@@ -19,15 +18,13 @@ export function replaceWords(filePath: string, wordsToReplace: string[][]): stri
   }
 }
 
+/*
 const filePath = './examples/documents/documents-01.txt';
-const result = readDocument(filePath);
+const documents = readDocument(filePath);
 
 const stopWordsFilePath = './examples/stop-words/stop-words-en.txt';
-const stopwords = readStopWordsFile(stopWordsFilePath);
 
-console.log(stopwords)
-
-const filteredResult = removeStopWords(result, stopwords);
+const filteredResult = removeStopWords(stopWordsFilePath, documents);
 
 console.log('Número de filas:', filteredResult.length);
 filteredResult.forEach((row, index) => {
@@ -37,3 +34,4 @@ filteredResult.forEach((row, index) => {
 const corpusFilePath = './examples/corpus/corpus-en.txt';
 const corpusResult = replaceWords(corpusFilePath, filteredResult);
 console.log('Texto reemplazado:', corpusResult);
+*/

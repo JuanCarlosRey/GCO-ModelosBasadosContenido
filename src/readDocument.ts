@@ -19,13 +19,3 @@ export function readDocument(filePath: string): string[][] {
     return [];
   }
 }
-
-/*
-const filePath = './examples/documents/documents-01.txt';
-const result = readDocument(filePath);
-
-console.log('Número de filas:', result.length); // Muestra el número de filas
-result.forEach((row, index) => {
-  console.log(`Fila ${index + 1}:`, row);
-});
-*/
