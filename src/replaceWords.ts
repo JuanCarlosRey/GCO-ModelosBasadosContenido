@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import { readDocument } from "./readDocument.js"
 import { removeStopWords } from "./removeStopWords.js"
+import { calculateTF } from './functions.js';
 
 export function replaceWords(filePath: string, wordsToReplace: string[][]): string[][] {
     try {
@@ -18,7 +19,7 @@ export function replaceWords(filePath: string, wordsToReplace: string[][]): stri
     }
 }
 
-
+/*
 const filePath = './examples/documents/documents-01.txt';
 const documents = readDocument(filePath);
 
@@ -34,3 +35,6 @@ filteredResult.forEach((row, index) => {
 const corpusFilePath = './examples/corpus/corpus-en.txt';
 const corpusResult = replaceWords(corpusFilePath, filteredResult);
 console.log('Texto reemplazado:', corpusResult);
+
+console.log('TF: ', calculateTF(corpusResult[0][0], corpusResult[0]));
+*/
