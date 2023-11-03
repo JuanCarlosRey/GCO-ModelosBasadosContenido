@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import { readDocuments } from "./readDocuments.js"
 import { calculateTF, calculateIDF, calculateTFIDF } from './functions.js';
 import { cosineSimilarity } from './cosineSimilarity.js';
+import { printTable } from './printTable.js';
 
 //// TODO: Probar que sucede con documentos grandes (descargar elquijote.txt de google) y comprobar que sucede.
 
@@ -19,7 +20,6 @@ const documents = readDocuments(filePath, stopWordsFilePath, corpusFilePath);
 calculateTF(documents);
 calculateIDF(documents);
 calculateTFIDF(documents);
-console.log(documents);
 
-console.log(cosineSimilarity(documents))
+printTable(documents);
 console.timeEnd("time");
