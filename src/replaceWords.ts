@@ -19,7 +19,7 @@ const documents = readDocuments(filePath, stopWordsFilePath, corpusFilePath);
 calculateTF(documents);
 calculateIDF(documents);
 calculateTFIDF(documents);
-//console.log(documents);
+console.log(documents);
 
-//console.log(cosineSimilarity(documents))
+console.log(cosineSimilarity(documents))
 console.timeEnd("time");
