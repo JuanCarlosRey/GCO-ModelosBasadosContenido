@@ -75,6 +75,7 @@ function validatePath(ruta: string, fileType: string) {
 
     printDocumentTable(documents);
     printDocumentCosineSimilarity(cosines);
+
   } catch (error) {
     console.error(pc.red(error.name + ":"), error.message);
   }

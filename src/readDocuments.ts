@@ -9,6 +9,9 @@ export function readDocuments(filePath: string, stowWordsfilePath: string, corpu
     let fileContent: string;
     try {
       fileContent = fs.readFileSync(filePath, 'utf8');
+      const lines = fileContent.split('\n');
+      const nonEmptyLines = lines.filter(line => line.trim() !== '');
+      fileContent = nonEmptyLines.join('\n');
     } catch (e) {
       throw new Error(`Error al leer el archivo ${filePath}`)
     }

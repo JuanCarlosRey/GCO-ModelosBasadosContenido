@@ -26,15 +26,20 @@ export function printDocumentTable(documents: Term[][]) {
     });
 }
 
+interface RowValues {
+  [key: string]: string;
+}
 
 export function printDocumentCosineSimilarity(cosines: number[][]) {
+
+  if (cosines.length >= 14) { return printIndividualDocumentCosineSimilarity(cosines, 1)}
   const c = new Table({
     title: pc.italic(pc.gray(`Cosine Similarity`)),
   });
   
   cosines.forEach((fila: number[], i: number) => {
     if (i < cosines.length - 1) {
-      const rowValues: { [key: string]: string } = {};
+      const rowValues: RowValues = {};
       rowValues[`Documents`] = pc.bold(pc.blue(`Document ${i + 1}`));
       for (let k = 0; k <= (i); k++) {
         const nullDocumentKey = pc.bold(pc.blue(`Document ${k + 1}`));
@@ -53,3 +58,30 @@ export function printDocumentCosineSimilarity(cosines: number[][]) {
   c.printTable();
 }
 
+export function printIndividualDocumentCosineSimilarity(cosines: number[][], tableIndex: number) {
+  const cosinesCopy = cosines
+  cosines = cosines.slice(tableIndex - 1);
+  const c = new Table({
+    title: pc.italic(pc.gray(`Cosine Similarity ${tableIndex}`)),
+  });
+
+  c.addColumn("Documents")
+  c.addColumn("Cosines")
+  let documentIndex = tableIndex
+  cosines.forEach((fila: number[], i: number) => {
+    if (i < cosines.length - 1) {
+     
+
+      fila.forEach((cosine: number) => {
+        if (documentIndex < cosinesCopy.length) {
+          c.addRow( { Documents: pc.bold(pc.blue(`Document ${++documentIndex}`)), Cosines: cosine.toFixed(6)})
+        }
+      });
+
+
+    }
+  });
+  c.printTable();
+
+  if (tableIndex < cosinesCopy.length - 1) { printIndividualDocumentCosineSimilarity(cosinesCopy, ++tableIndex)}
+}

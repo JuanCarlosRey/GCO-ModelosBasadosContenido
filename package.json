@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node dist/index.js\""
+    "start": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "test": "tsc && node dist/index.js --file \"examples/documents/documents-03.txt\" --stop_words \"examples/stop-words/stop-words-en.txt\" --corpus \"examples/corpus/corpus-en.txt\""
   },
   "type": "commonjs",
   "keywords": [],
