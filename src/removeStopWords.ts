@@ -1,5 +1,3 @@
-import * as fs from 'fs';
-
 export function removeStopWords(stopwords: string[], data: string[]): string[] {
   return data.map(word => {
     if (!stopwords.includes(word)) {

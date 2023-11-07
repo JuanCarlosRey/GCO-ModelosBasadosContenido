@@ -1,7 +1,5 @@
 import { Term } from "./term";
 
-/////////// TODO:
-
 // Función para calcular TF (Término Frecuencia) de todos los términos de todos los documentos
 export function calculateTF(termMatrix: Term[][]): void {
   termMatrix.forEach(document => {

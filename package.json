@@ -2,15 +2,20 @@
   "name": "gco-modelosbasadoscontenido",
   "version": "1.0.0",
   "description": "",
-  "main": "replaceWords.js",
+  "main": "index.js",
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node dist/replaceWords.js\""
+    "start": "tsc-watch --onSuccess \"node dist/index.js\""
   },
+  "type": "commonjs",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.8.9",
     "tsc-watch": "^6.0.4"
+  },
+  "dependencies": {
+    "console-table-printer": "^2.11.2",
+    "picocolors": "^1.0.0"
   }
 }
