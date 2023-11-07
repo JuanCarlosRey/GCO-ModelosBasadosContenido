@@ -11,10 +11,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/argparse": "^2.0.13",
     "@types/node": "^20.8.9",
+    "@types/valid-url": "^1.0.6",
     "tsc-watch": "^6.0.4"
   },
   "dependencies": {
+    "argparse": "^2.0.1",
     "console-table-printer": "^2.11.2",
     "picocolors": "^1.0.0"
   }

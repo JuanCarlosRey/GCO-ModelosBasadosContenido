@@ -5,13 +5,30 @@ import { replaceWords } from './replaceWords';
 
 export function readDocuments(filePath: string, stowWordsfilePath: string, corpusFilePath: string): Term[][] {
   try {
-    const fileContent = fs.readFileSync(filePath, 'utf8');
+
+    let fileContent: string;
+    try {
+      fileContent = fs.readFileSync(filePath, 'utf8');
+    } catch (e) {
+      throw new Error(`Error al leer el archivo ${filePath}`)
+    }
+
+    let stopWordsContent: string;
+    try {
+      stopWordsContent = fs.readFileSync(stowWordsfilePath, 'utf8');
+    } catch (e) {
+      throw new Error(`Error al leer el archivo ${stowWordsfilePath}`)
+    }
+     
+    let corpusContent: string;
+    try {
+      corpusContent = fs.readFileSync(corpusFilePath, 'utf8');
+    } catch (e) {
+      throw new Error(`Error al leer el archivo ${stowWordsfilePath}`)
+    }
+
     const rows = fileContent.split('\n');
-
-    const stopWordsContent = fs.readFileSync(stowWordsfilePath, 'utf8');
     const stopwords = stopWordsContent.split(/\r?\n/).map(word => word.toLowerCase());
-
-    const corpusContent = fs.readFileSync(corpusFilePath, 'utf8');
     const wordPairs = JSON.parse(corpusContent);
 
     const result: Term[][] = rows.map(row => {
@@ -39,7 +56,7 @@ export function readDocuments(filePath: string, stowWordsfilePath: string, corpu
             index,
             term,
             occurrences: 1,
-            tf: 0, // Calcula el TF e IDF según tus necesidades
+            tf: 0, 
             idf: 0,
             tf_idf: 0,
           };
@@ -52,7 +69,6 @@ export function readDocuments(filePath: string, stowWordsfilePath: string, corpu
 
     return result;
   } catch (error) {
-    console.error('Error al leer el archivo:', error);
-    return [];
+    throw new Error(error.message);
   }
 }
