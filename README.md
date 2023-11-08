@@ -37,7 +37,9 @@ A continuación se muestra un ejemplo de ejecución del programa:
 $ npm test
 ```
 ![Ejemplo de ejecución](imagenes/Ejemplo1.png)
+
 En este ejemplo se muestra la ejecución utilizando el archivo `documents-03.txt`. Se muestran las tablas de los documentos 1 y 2.
 
 ![Ejemplo de ejecución](imagenes/Ejemplo2.png)
+
 Aquí se muestra la tabla de similitud entre el documento 1 y el el resto.
