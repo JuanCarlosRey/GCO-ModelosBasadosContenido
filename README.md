@@ -7,12 +7,12 @@ git clone git@github.com:JuanCarlosRey/GCO-ModelosBasadosContenido.git
 En el caso de que necesite instalar algunas dependencias, puede hacerlo con lso siguientes comandos:
 ```bash
 npm install
-npm install tsc-watch --save-dev
+npm install typescript
 ```
 ## Ejecución
 Para ejecutar el proyecto debe ejecutar el siguiente comando:
 ```bash
-npm start
+npm test
 ```
 ## Descripción
 En este proyecto se ha implementado el código necesario para realizar un sistema de recomendación basado en el contenido. Este programa busca obtener la similitud entre diferentes documentos a través de la repetición del número de palabras que aparecen en cada uno de ellos. 
@@ -34,7 +34,8 @@ Para ello, se han realizado los siguientes pasos:
 ## Ejemplo de ejecución
 A continuación se muestra un ejemplo de ejecución del programa:
 ```bash
-$ npm start
+$ npm test
 ```
-![Ejemplo de ejecución](/imagenes/Ejemplo.png)
-En este ejemplo se muestra la ejecución utilizando el archivo `documents-02.txt`. 
+![Ejemplo de ejecución](/imagenes/Ejemplo1.png)
+En este ejemplo se muestra la ejecución utilizando el archivo `documents-03.txt`. Se muestran las tablas de los documentos 1 y 2.
+![Ejemplo de ejecución](/imagenes/Ejemplo2.png)

@@ -20,6 +20,7 @@
   "dependencies": {
     "argparse": "^2.0.1",
     "console-table-printer": "^2.11.2",
-    "picocolors": "^1.0.0"
+    "picocolors": "^1.0.0",
+    "typescript": "^5.2.2"
   }
 }
